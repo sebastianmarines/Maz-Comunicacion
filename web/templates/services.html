@@ -13,13 +13,15 @@
               <div class="row">
                   {% for subservice in service.subservicio_set.all %}
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-toggle="modal">
-                        <h1>{{ subservice.title }}</h1>
-                      {% comment %}<img
-                        src="./assets/placeholder.jpg"
-                        alt=""
-                        class="img-fluid"
-                        style="margin: 1rem auto; overflow: hidden"
-                      />{% endcomment %}
+                        {% comment %}<h1>{{ subservice.title }}</h1>{% endcomment %}
+                        <a href="{% url 'web:servicio' service.slug subservice.slug %}">
+                            <img
+                                src="{{subservice.image.url}}"
+                                alt=""
+                                class="img-fluid"
+                                style="margin: 1rem auto; overflow: hidden"
+                            />
+                        </a>
                     </div>
                   {% endfor %}
 
