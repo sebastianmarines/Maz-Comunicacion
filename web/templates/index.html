@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+        <div class="container text-center">
+            <h1>Acerca de MAZ</h1>
+            <div class="separator"></div>
+            <h5>
+            Asesoramos a las organizaciones y a las personas para que logren sus
+            objetivos a través de acciones de estrategia y comunicación efectiva.
+            </h5>
+        </div>
+
+        <section class="hk-services">
+            <div class="container">
+                <div class="row">
+                <div class="col">
+                    <div class="hk-services-header text-center">
+                    <h2>
+                        Servicios
+                    </h2>
+                    </div>
+                </div>
+                </div>
+                <div class="separator"></div>
+                <div class="row">
+                {% for service in services %}
+                    <div class="col-sm-6 col-md-4">
+                        <a href="/servicios/comunicacion-corporativa">
+                        <div class="hk-services-box text-center">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>{{ service.title }}</h3>
+                        </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container text-center">
+                <h1>Blog</h1>
+            </div>
+            <div class="separator"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <div class="card text-center">
+                          <img
+                            class="card-img-top"
+                            src="./assets/placeholder.jpg"
+                            alt=""
+                            width="100%"
+                          />
+                          <div class="card-block">
+                            <h4 class="card-title">Titulo</h4>
+                            <!--<p class="card-text">
+                              {{ excerpt }}
+                            </p>-->
+                            <a class="btn btn-default" href="#">Leer más</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container text-center">
+            <a href="/blog" class="btn btn-default">Todas las entradas</a>
+        </div>
+    </section>
+{% endblock content %}
