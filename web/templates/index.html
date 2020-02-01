@@ -44,30 +44,31 @@
             </div>
             <div class="separator"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                        <div class="card text-center">
-                          <img
-                            class="card-img-top"
-                            src="./assets/placeholder.jpg"
-                            alt=""
-                            width="100%"
-                          />
-                          <div class="card-block">
-                            <h4 class="card-title">Titulo</h4>
-                            <!--<p class="card-text">
-                              {{ excerpt }}
-                            </p>-->
-                            <a class="btn btn-default" href="#">Leer más</a>
-                          </div>
+                <div class="container">
+                    <div class="row">
+                        {% for post in post_list %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                            <div class="card text-center">
+                                <img
+                                class="card-img-top"
+                                src="{{ post.featured_image.url }}"
+                                alt=""
+                                width="100%"
+                                />
+                                <div class="card-block">
+                                <h4 class="card-title">{{ post.title }}</h4>
+                                <a class="btn btn-default" href="{% url 'blog:post' post.slug %}">Leer más</a>
+                                </div>
+                            </div>
                         </div>
-                      </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </section>
 
         <div class="container text-center">
-            <a href="/blog" class="btn btn-default">Todas las entradas</a>
+            <a href="{% url 'blog:blog' %}" class="btn btn-default">Todas las entradas</a>
         </div>
     </section>
 {% endblock content %}

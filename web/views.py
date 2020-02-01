@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from . import models
+from blog.models import Post
 
 
 def index(request):
-    return render(request, 'index.html', {'services': models.Servicio.objects.all()})
+    return render(request, 'index.html', {'services': models.Servicio.objects.all(), 'post_list':Post.objects.filter(status=1).order_by('-created_on')[:5]})
 
 
 def servicio(request, slug):

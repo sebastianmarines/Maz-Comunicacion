@@ -5,7 +5,7 @@ from . import views
 app_name = "web"
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name="index"),
     path('servicios/<slug:slug>/', include([
         path('', views.servicio, name="servicios"),
         path('<slug:subslug>', views.subservicio, name="servicio")

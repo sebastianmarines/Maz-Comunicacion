@@ -2,20 +2,23 @@
 {% load nav_items %}
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-    <img
-      src="{% static 'assets/logo.png' %}"
-      height="55rem"
-      width="auto"
-      alt=""
-      class="d-none d-sm-block"
-    />
-    <img
-      src="{% static 'assets/logo-sm.png' %}"
-      height="55rem"
-      width="auto"
-      alt=""
-      class="d-sm-none"
-    />
+    <a href="{% url 'web:index' %}">
+        <img
+          src="{% static 'assets/logo.png' %}"
+          height="55rem"
+          width="auto"
+          alt=""
+          class="d-none d-sm-block"
+        />
+        <img
+          src="{% static 'assets/logo-sm.png' %}"
+          height="55rem"
+          width="auto"
+          alt=""
+          class="d-sm-none"
+        />
+    </a>
+
   <button
     class="navbar-toggler"
     type="button"
