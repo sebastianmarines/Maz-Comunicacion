@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'storages',
 
     'web',
+    'periodicos',
 ]
 
 MIDDLEWARE = [
