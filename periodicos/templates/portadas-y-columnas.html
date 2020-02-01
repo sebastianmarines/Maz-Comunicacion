@@ -1,1 +1,30 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="container text-center">
+          <h1>{{ title }}</h1>
+        </div>
+        <div class="separator"></div>
+        <br />
+        <div class="container">
+          <div class="row">
+              {% for periodico in periodicos %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                {% if mexico %}
+                    <a href="{% url 'periodicos:portada_mexico' periodico.slug %}">
+                {% else %}
+                    <a href="{% url 'periodicos:portada' periodico.slug %}">
+                {% endif %}
+                    <img
+                      class="card-img-top"
+                      src="{{ periodico.thumbnail.url }}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+    </section>
+{% endblock %}
