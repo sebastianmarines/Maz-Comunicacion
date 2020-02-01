@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'storages',
+    'django_summernote',
 
     'web',
     'periodicos',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -146,4 +148,7 @@ DEFAULT_FILE_STORAGE = 'storage_backends.PublicMediaStorage'
 
 AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
 PRIVATE_FILE_STORAGE = 'storage_backends.PrivateMediaStorage'
+
+# Summernote
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
