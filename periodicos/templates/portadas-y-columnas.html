@@ -10,14 +10,14 @@
         <div class="container">
           <div class="row">
               {% for periodico in periodicos %}
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                 {% if mexico %}
                     <a href="{% url 'periodicos:portada_mexico' periodico.slug %}">
                 {% else %}
                     <a href="{% url 'periodicos:portada' periodico.slug %}">
                 {% endif %}
                     <img
-                      class="card-img-top"
+                      class="img-fluid"
                       src="{{ periodico.thumbnail.url }}"
                       alt=""
                     />
