@@ -11,6 +11,11 @@ class PublicMediaStorage(S3Boto3Storage):
     file_overwrite = False
 
 
+class NewsMediaStorage(S3Boto3Storage):
+    location = settings.AWS_PUBLIC_MEDIA_LOCATION + "/portadas-y-columnas/"
+    file_overwrite = False
+
+
 class PrivateMediaStorage(S3Boto3Storage):
     location = settings.AWS_PRIVATE_MEDIA_LOCATION
     default_acl = 'private'
