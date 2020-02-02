@@ -23,10 +23,10 @@
         <div class="col-sm-1">
           <ul>
             <h5></h5>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/servicios">Servicios</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="{% url 'web:index' %}">Inicio</a></li>
+            <li><a href="{% url 'blog:blog' %}">Blog</a></li>
+            {% comment %}<li><a href="{% url 'web:servicios' %}">Servicios</a></li>{% endcomment %}
+            <li><a href="{% url 'web:contacto' %}">Contacto</a></li>
           </ul>
         </div>
         <div class="col-sm-2">
@@ -42,11 +42,11 @@
             <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
             <a href="#" class="google"><i class="fab fa-google-plus"></i></a>
           </div>
-          <a href="/contacto"><button type="button" class="btn btn-default">Contacto</button></a>
+          <a href="{% url 'web:contacto' %}"><button type="button" class="btn btn-default">Contacto</button></a>
         </div>
       </div>
     </div>
     <div class="footer-copyright text-center">
-      <p>© 2020 MAZ Comunicación</p>
+      <p>© {% now "Y" %} MAZ Comunicación</p>
     </div>
 </footer>
