@@ -19,7 +19,7 @@ def subservicio(request, slug, subslug):
     parent = get_object_or_404(models.Servicio, slug=slug)
     obj = get_object_or_404(models.SubServicio, slug=subslug)
 
-    return HttpResponse(obj.title)
+    return render(request, 'subservicio.html', {'parent': parent, 'service': obj})
 
 
 def contact(request):

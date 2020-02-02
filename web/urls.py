@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('servicios/<slug:slug>/', include([
         path('', views.servicio, name="servicios"),
-        path('<slug:subslug>', views.subservicio, name="servicio")
+        path('<slug:subslug>/', views.subservicio, name="servicio")
     ])),
     path('contacto/', views.contact, name="contacto"),
 ]
