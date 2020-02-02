@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
+
 from . import models
 from blog.models import Post
+from .forms import ContactForm
 
 
 def index(request):
@@ -17,3 +19,15 @@ def subservicio(request, slug, subslug):
     obj = get_object_or_404(models.SubServicio, slug=subslug)
 
     return HttpResponse(obj.title)
+
+
+def contact(request):
+    context = {'form': ContactForm()}
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            context['sucess'] = True
+        else:
+            context['errors'] = True
+
+    return render(request, 'contact.html', context)

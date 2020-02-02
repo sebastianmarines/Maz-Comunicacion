@@ -10,4 +10,5 @@ urlpatterns = [
         path('', views.servicio, name="servicios"),
         path('<slug:subslug>', views.subservicio, name="servicio")
     ])),
+    path('contacto/', views.contact, name="contacto"),
 ]

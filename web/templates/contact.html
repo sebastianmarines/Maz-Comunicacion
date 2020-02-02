@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+<div class="container text-center">
+  <h1>Contacto</h1>
+</div>
+<div class="separator"></div>
+<br />
+<div class="container text-center">
+  <h2>¡Hola!</h2>
+  <h3>¿Cómo te podemos ayudar?</h3>
+</div>
+<div class="container" style="padding: 20px 0">
+        {% if sucess %}
+            <div class="alert alert-success" role="alert">
+                Gracias por contactarnos.
+            </div>
+        {% endif %}
+        {% if errors %}
+            <div class="alert alert-danger" role="alert">
+                Por favor verifique todos los campos.
+            </div>
+        {% endif %}
+      <form id="contact-form" method="post" role="form">
+        {% csrf_token %}
+        <div class="messages"></div>
+
+        <div class="controls">
+          <div class="row">
+            <div class="col-md-6">
+              {{ form.name | as_crispy_field }}
+            </div>
+            <div class="col-md-6">
+              {{ form.email | as_crispy_field }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{ form.phone | as_crispy_field }}
+            </div>
+            <div class="col-md-6">
+              {{ form.city | as_crispy_field }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              {{ form.message | as_crispy_field }}
+            </div>
+            <div class="col-md-12">
+              <input
+                type="submit"
+                class="btn btn-success btn-send"
+                value="Enviar mensaje"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br />
+</div>
+{% endblock %}

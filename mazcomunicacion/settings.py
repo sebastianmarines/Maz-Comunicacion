@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'storages',
     'django_summernote',
+    'crispy_forms',
 
     'web',
     'periodicos',
@@ -152,3 +153,5 @@ PRIVATE_FILE_STORAGE = 'storage_backends.PrivateMediaStorage'
 # Summernote
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
