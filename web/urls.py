@@ -11,4 +11,6 @@ urlpatterns = [
         path('<slug:subslug>/', views.subservicio, name="servicio")
     ])),
     path('contacto/', views.contact, name="contacto"),
+    path('politica-de-privacidad/', views.politica_privacidad, name="privacy-policy"),
+    path('politica-de-cookies/', views.politica_cookies, name="cookie-policy")
 ]

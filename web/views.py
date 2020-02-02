@@ -53,3 +53,11 @@ def contact(request):
             context['errors'] = True
 
     return render(request, 'contact.html', context)
+
+
+def politica_privacidad(request):
+    return render(request, 'politica-privacidad.html')
+
+
+def politica_cookies(request):
+    return render(request, 'politica-cookies.html')
