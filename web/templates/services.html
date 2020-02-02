@@ -10,26 +10,15 @@
 
         <section>
             <div class="container">
-              <div class="row">
+              <div class="row justify-content-center">
 
                   {% for subservice in service.subservicio_set.all %}
-                    {% comment %}<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-toggle="modal">
-                        <h1>{{ subservice.title }}</h1>
-                        <a href="{% url 'web:servicio' service.slug subservice.slug %}">
-                            <img
-                                src="{{subservice.image.url}}"
-                                alt=""
-                                class="img-fluid"
-                                style="margin: 1rem auto; overflow: hidden"
-                            />
-                        </a>
-                    </div>{% endcomment %}
-                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                      <div class="col-9 col-xl-3 col-lg-4 col-md-5 col-sm-6 mx-4 mx-md-0 py-1 py-md-0">
                           <div class="card">
                               <img src="{{subservice.image.url}}" class="card-img-top" alt="">
                               <div class="card-body">
                                 <h5 class="card-title">{{ subservice.title }}</h5>
-                                <a href="{% url 'web:servicio' service.slug subservice.slug %}" class="btn btn-primary stretched-link">Ver</a>
+                                <a href="{% url 'web:servicio' service.slug subservice.slug %}" class="btn btn-default stretched-link">Ver</a>
                               </div>
                           </div>
                       </div>
