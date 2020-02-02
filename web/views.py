@@ -46,7 +46,7 @@ def contact(request):
             {message}
             """
 
-            mail = EmailMessage(subject, new_message, email, ['sebastian0marines@gmail.com'], reply_to=[email])
+            mail = EmailMessage(subject, new_message, email, ['zitamararellano@hotmail.com'], reply_to=[email])
             mail.send()
 
         else:
