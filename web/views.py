@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.core.mail import EmailMessage
+from django.conf import settings
 
 from . import models
 from blog.models import Post
@@ -35,18 +36,25 @@ def contact(request):
             city = form.cleaned_data.get("city")
             message = form.cleaned_data.get("message")
 
+            coahuila = "✔️" if form.cleaned_data.get("sub_coahuila") else "❌"
+            nl = "✔️" if form.cleaned_data.get("sub_nl") else "❌"
+            mex = "✔️" if form.cleaned_data.get("sub_mexico") else "❌"
+
             subject = name + " envio un mensaje"
 
             new_message = f"""
             Nombre: {name}
             Correo: {email}
             Telefono: {phone}
+                Portadas Coahuila: {coahuila}
+                Portadas Nuevo León: {nl}
+                Portadas México: {mex}
             Ciudad: {city}
             Mensaje:
             {message}
             """
 
-            mail = EmailMessage(subject, new_message, email, ['zitamararellano@hotmail.com'], reply_to=[email])
+            mail = EmailMessage(subject, new_message, email, settings.EMAIL_RECEIVER, reply_to=[email])
             mail.send()
 
         else:
