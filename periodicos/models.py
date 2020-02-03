@@ -5,9 +5,11 @@ import storage_backends
 class PortadasYColumnas(models.Model):
     PORTADAS = 1
     PORTADASMEXICO = 2
+    PORTADASNL = 3
     CATEGORY = (
-        (PORTADAS, ('Portadas Y Columnas')),
-        (PORTADASMEXICO, ('Portadas Y Columnas de México'))
+        (PORTADAS, ('Portadas Coahuila')),
+        (PORTADASMEXICO, ('Portadas México')),
+            (PORTADASNL, ('Portadas Nuevo León'))
     )
 
     title = models.CharField(max_length=15)

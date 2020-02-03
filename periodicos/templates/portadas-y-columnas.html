@@ -11,10 +11,12 @@
           <div class="row">
               {% for periodico in periodicos %}
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                {% if mexico %}
-                    <a href="{% url 'periodicos:portada_mexico' periodico.slug %}">
-                {% else %}
+                {% if cat == 1 %}
                     <a href="{% url 'periodicos:portada' periodico.slug %}">
+                {% elif cat == 2 %}
+                    <a href="{% url 'periodicos:portada_mexico' periodico.slug %}">
+                {% elif cat == 3 %}
+                    <a href="{% url 'periodicos:portada_nl' periodico.slug %}">
                 {% endif %}
                     <img
                       class="img-fluid"
