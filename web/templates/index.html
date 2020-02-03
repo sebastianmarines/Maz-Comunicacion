@@ -11,6 +11,9 @@
   background-size: cover;
   height: 60vh;
 }
+.hk-services-box {
+    background-image: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+}
 </style>
 
 {% endblock %}
@@ -18,7 +21,8 @@
 {% block content %}
 <div class="jumbotron jumbotron-fluid d-flex">
   <div class="container text-center align-self-center">
-    <h1 style="color: #ffff;"><span style="color: #dcbe00;">MAZ</span> Comunicación</h1>
+    <h1 class="text-white"><span style="color: #dcbe00;">MAZ</span> Comunicación</h1>
+    <h3 class="text-white">Estrategia y Publicidad</h3>
   </div>
 </div>
 <section>
@@ -35,7 +39,7 @@
         <img src="{% static 'assets/banner.jpg' %}" alt="" class="img-fluid">
     </div>
 
-    <section class="hk-services">
+    <section class="hk-services" id="servicios">
         <div class="container">
             <div class="row">
             <div class="col">
@@ -52,7 +56,6 @@
                 <div class="col-sm-6 col-md-4">
                     <a href="{% url 'web:servicios' service.slug %}">
                     <div class="hk-services-box text-center">
-                        <i class="fas fa-paint-brush"></i>
                         <h3>{{ service.title }}</h3>
                     </div>
                     </a>
@@ -61,8 +64,7 @@
                 <div class="col-sm-6 col-md-4">
                     <a href="{% url 'periodicos:portadas' %}">
                     <div class="hk-services-box text-center">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Portadas y Columnas</h3>
+                        <h3>Portadas Coahuila</h3>
                     </div>
                     </a>
                 </div>
@@ -70,7 +72,15 @@
                     <a href="{% url 'periodicos:portadas_mexico' %}">
                     <div class="hk-services-box text-center">
                         <i class="fas fa-paint-brush"></i>
-                        <h3>Portadas y Columnas de México</h3>
+                        <h3>Portadas México</h3>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="{% url 'periodicos:portadas_nl' %}">
+                    <div class="hk-services-box text-center">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Portadas Nuevo León</h3>
                     </div>
                     </a>
                 </div>

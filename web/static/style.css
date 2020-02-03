@@ -14,26 +14,16 @@
   }
   .hk-services-box {
     margin: 15px 0;
-    padding: 30px 15px;
+    padding: 60px 15px;
     transition: all 0.3s ease-in-out;
-  }
-  .hk-services-box i {
-    color: #31e080;
-    font-size: 38px;
-    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
   }
   .hk-services-box h3 {
-    color: #54655c;
+    color: #ffffee;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 0;
-  }
-  .hk-services-box:hover {
-    background-image: linear-gradient(to left, #e0d436, #f1c840);
-  }
-  .hk-services-box:hover i,
-  .hk-services-box:hover h3 {
-    color: #fff;
   }
 
   @import url(
