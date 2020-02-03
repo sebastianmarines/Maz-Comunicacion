@@ -4,7 +4,7 @@
 <section>
     <div class="container" >
 
-      <div class="small-wrapper" v-else>
+      <div class="small-wrapper">
         <div class="text-center">
           <h1 class="post-title">{{ object.title }}</h1>
           <div class="separator"></div>
@@ -17,7 +17,7 @@
         </div>
         <hr />
         <!--        <span class="post-date">18 Jan 2018</span>-->
-        <div class="container">
+        <div class="container" id="post-content">
             {{ object.content | safe }}
         </div>
 
@@ -30,4 +30,14 @@
 
 {% block scripts %}
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e34f8bcd3c5b38b"></script>
+<script>
+$(function() {
+  $("#post-content img").each(function(){
+      $(this).addClass("img-fluid")
+  })
+  $("iframe").each(function(){
+    $(this).css("max-width", "85vw")
+  })
+})
+</script>
 {% endblock %}

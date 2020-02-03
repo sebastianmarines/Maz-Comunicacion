@@ -165,6 +165,7 @@ PRIVATE_FILE_STORAGE = 'storage_backends.PrivateMediaStorage'
 
 # Summernote
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+SUMMERNOTE_THEME = 'bs4'
 
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
