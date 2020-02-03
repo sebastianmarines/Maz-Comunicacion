@@ -5,6 +5,7 @@ from django.conf import settings
 from . import models
 from blog.models import Post
 from .forms import ContactForm
+from contact.models import Contact
 
 
 def index(request):
@@ -35,12 +36,18 @@ def contact(request):
             phone = form.cleaned_data.get("phone")
             city = form.cleaned_data.get("city")
             message = form.cleaned_data.get("message")
+            sub_coah =form.cleaned_data.get("sub_coahuila")
+            sub_nl = form.cleaned_data.get("sub_nl")
+            sub_mex = form.cleaned_data.get("sub_mexico")
 
-            coahuila = "✔️" if form.cleaned_data.get("sub_coahuila") else "❌"
-            nl = "✔️" if form.cleaned_data.get("sub_nl") else "❌"
-            mex = "✔️" if form.cleaned_data.get("sub_mexico") else "❌"
+            Contact.objects.create(name=name, email=email, phone=phone, city=city, sub_coah=sub_coah, sub_nl=sub_nl,
+                                   sub_mex=sub_mex, message=message)
 
-            subject = name + " envio un mensaje"
+            coahuila = "✔️" if sub_coah else "❌"
+            nl = "✔️" if sub_nl else "❌"
+            mex = "✔️" if sub_mex else "❌"
+
+            subject = name + " envió un mensaje"
 
             new_message = f"""
             Nombre: {name}

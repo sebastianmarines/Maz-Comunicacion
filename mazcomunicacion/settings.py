@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'web',
     'periodicos',
     'blog',
+    'contact'
 ]
 
 MIDDLEWARE = [
