@@ -1,4 +1,5 @@
 {% load static %}
+{% load nav_items %}
 
 <footer id="myFooter">
     <div class="container">
@@ -25,8 +26,7 @@
             <h5></h5>
             <li><a href="{% url 'web:index' %}">Inicio</a></li>
             <li><a href="{% url 'blog:blog' %}">Blog</a></li>
-
-
+            <li><a href="{% service_url %}">Servicios</a></li>
             <li><a href="{% url 'web:contacto' %}">Contacto</a></li>
           </ul>
         </div>
