@@ -3,13 +3,20 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 
 from . import models
+from frontend.models import Banner, About, Servicios
 from blog.models import Post
 from .forms import ContactForm
 from contact.models import Contact
 
 
 def index(request):
-    return render(request, 'index.html', {'services': models.Servicio.objects.all(), 'post_list':Post.objects.filter(status=1).order_by('-created_on')[:5]})
+    return render(request, 'index.html', {
+        'services': models.Servicio.objects.all(),
+        'post_list': Post.objects.filter(status=1).order_by('-created_on')[:5],
+        'banner': Banner.objects.get(pk=1),
+        'about': About.objects.get(pk=1),
+        'services_conf': Servicios.objects.get(pk=1)
+    })
 
 
 def servicio(request, slug):
