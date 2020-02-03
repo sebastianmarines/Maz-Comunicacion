@@ -8,8 +8,30 @@ class Banner(models.Model):
     image = models.ImageField(storage=storage_backends.PublicMediaStorage())
 
     def __str__(self):
-        return "Banner configuration"
+        return "Configuración de banner"
 
     class Meta:
-        verbose_name = "Banner configuration"
-        verbose_name_plural = "Banner configuration"
+        verbose_name = "Configuración de banner"
+        verbose_name_plural = "Configuración de banner"
+
+
+class About(models.Model):
+    description = models.TextField()
+
+    def __str__(self):
+        return "Acerca de MAZ"
+
+    class Meta:
+        verbose_name = "Acerca de MAZ"
+        verbose_name_plural = "Acerca de MAZ"
+
+
+class Servicios(models.Model):
+    background_image = models.ImageField(storage=storage_backends.PublicMediaStorage())
+
+    def __str__(self):
+        return "Configuración de servicios"
+
+    class Meta:
+        verbose_name = "Configuración de servicios"
+        verbose_name_plural = "Configuración de servicios"
