@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'storages',
     'django_summernote',
     'crispy_forms',
+    'analytical',
 
     'web',
     'periodicos',
@@ -188,3 +189,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_RECEIVER = config('EMAIL_RECEIVER', cast=Csv())
 
+# Analytics
+GOOGLE_ANALYTICS_PROPERTY_ID = config('GA_CODE')

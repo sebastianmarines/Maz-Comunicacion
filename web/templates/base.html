@@ -1,7 +1,9 @@
 {% load static %}
+{% load analytical %}
 
 <!DOCTYPE html>
 <head>
+    {% analytical_head_top %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -20,8 +22,10 @@
             font-family: Gobold !important;
         }
     </style>
+    {% analytical_head_bottom %}
 </head>
 <body>
+    {% analytical_body_top %}
     {% include 'partials/nav.html' %}
 
     <div style="min-height: 70vh;">
@@ -43,6 +47,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
     {% block scripts %}{% endblock %}
-    
+    {% analytical_body_bottom %}
 </body>
 </html>
