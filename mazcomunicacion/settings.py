@@ -168,6 +168,13 @@ PRIVATE_FILE_STORAGE = 'storage_backends.PrivateMediaStorage'
 # Summernote
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'fontNames': ['Gobold', 'Gotham', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+        'fontNamesIgnoreCheck': ['Gobold', 'Gotham']
+    },
+    'css': ('//mazcomunicacion.s3-us-west-1.amazonaws.com/fonts/fonts.css', )
+}
 
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
