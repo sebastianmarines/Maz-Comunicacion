@@ -25,14 +25,3 @@ class About(models.Model):
     class Meta:
         verbose_name = "Acerca de MAZ"
         verbose_name_plural = "Acerca de MAZ"
-
-
-class Servicios(models.Model):
-    background_image = models.ImageField(storage=storage_backends.PublicMediaStorage())
-
-    def __str__(self):
-        return "Configuración de servicios"
-
-    class Meta:
-        verbose_name = "Configuración de servicios"
-        verbose_name_plural = "Configuración de servicios"

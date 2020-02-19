@@ -10,4 +10,3 @@ class AboutModelAdmin(SummernoteModelAdmin):
 
 admin.site.register(models.Banner)
 admin.site.register(models.About, AboutModelAdmin)
-admin.site.register(models.Servicios)
