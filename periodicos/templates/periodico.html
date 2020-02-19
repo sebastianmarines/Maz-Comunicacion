@@ -2,11 +2,11 @@
 
 {% block content %}
 <section >
-    <div class="container-fluid text-center" v-else>
+    <div class="container-fluid text-center px-1">
         <iframe
-        src="{{ periodico.file.url | add:'#toolbar=0&navpanes=0&scrollbar=0' }}"
-        id="pdf"
-        style="height:100vh;width:100vw;"
+            src="https://drive.google.com/viewerng/viewer?url={{ periodico.file.url }}&embedded=true"
+            id="pdf"
+            style="height:100vh;width:100%;"
         ></iframe>
     </div>
 </section>
