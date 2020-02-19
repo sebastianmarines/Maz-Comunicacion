@@ -5,6 +5,7 @@ import storage_backends
 class Servicio(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    image = models.ImageField(storage=storage_backends.PublicMediaStorage(), blank=True)
     slug = models.SlugField()
 
     def __str__(self):

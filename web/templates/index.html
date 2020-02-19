@@ -11,9 +11,6 @@
   background-size: cover;
   height: 60vh;
 }
-.hk-services-box {
-    background-image: url("{{ services_conf.background_image.url }}");
-}
 </style>
 
 {% endblock %}
@@ -50,7 +47,7 @@
             <div class="separator"></div>
             <div class="row">
             {% for service in services %}
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4" style="background-image: url({{ service.image.url }});background-size: contain;">
                     <a href="{% url 'web:servicios' service.slug %}">
                     <div class="hk-services-box text-center">
                         <h3>{{ service.title }}</h3>
