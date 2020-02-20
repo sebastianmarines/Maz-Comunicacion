@@ -9,3 +9,4 @@ class PortadasAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.PortadasYColumnas, PortadasAdmin)
+admin.site.register(models.Configuracion)

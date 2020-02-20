@@ -37,4 +37,8 @@ class Configuracion(models.Model):
     image = models.ImageField(storage=storage_backends.PublicMediaStorage(), blank=True)
 
     def __str__(self):
-        return self.title
+        # return str(CATEGORY[self.title.imag][1])
+        return list(filter(lambda category: category[0] == self.title, CATEGORY))[0][1]
+
+    class Meta:
+        verbose_name_plural = "Configuraciones"
