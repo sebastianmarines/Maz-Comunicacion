@@ -55,14 +55,14 @@
                     </a>
                 </div>
             {% endfor %}
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4" style="background-image: url({{ periodicos.coahuila.image.url }});background-size: contain;">
                     <a href="{% url 'periodicos:portadas' %}">
                     <div class="hk-services-box text-center">
                         <h3>Portadas Coahuila</h3>
                     </div>
                     </a>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4" style="background-image: url({{ periodicos.mexico.image.url }});background-size: contain;">
                     <a href="{% url 'periodicos:portadas_mexico' %}">
                     <div class="hk-services-box text-center">
                         <i class="fas fa-paint-brush"></i>
@@ -70,7 +70,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-4" style="background-image: url({{ periodicos.nl.image.url }});background-size: contain;">
                     <a href="{% url 'periodicos:portadas_nl' %}">
                     <div class="hk-services-box text-center">
                         <i class="fas fa-paint-brush"></i>

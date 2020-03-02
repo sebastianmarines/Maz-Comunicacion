@@ -5,6 +5,7 @@ from django.conf import settings
 from . import models
 from frontend.models import Banner, About
 from blog.models import Post
+from periodicos.models import Configuracion as NewsConfig
 from .forms import ContactForm
 from contact.models import Contact
 
@@ -15,7 +16,11 @@ def index(request):
         'post_list': Post.objects.filter(status=1).order_by('-created_on')[:5],
         'banner': Banner.objects.get(pk=1),
         'about': About.objects.get(pk=1),
-        # 'services_conf': Servicios.objects.get(pk=1)
+        'periodicos': {
+            'coahuila': NewsConfig.objects.get(title=1),
+            'mexico': NewsConfig.objects.get(title=2),
+            'nl': NewsConfig.objects.get(title=3)
+        }
     })
 
 
